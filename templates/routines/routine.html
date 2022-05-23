@@ -1,25 +1,32 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 <!-- <img src="{% static 'wp.jpeg' %}" alt="No img in static"> -->
 <h1>Routine</h1>
-<h3>6-7  ----  Workout</h3>
-<h3>7-8  ----  **Breakfast**</h3>
-<h3>8-9  ----  Self Skill ++</h3>
-<h3>9-10 ----  Self Skill ++</h3>
-<h3>10-11----  Aptitude + Puzzles</h3>
-<h3>11-12----  DS</h3>
-<h3>12-1 ----  Algo</h3>
-<h3>1-2  ----  **Lunch**</h3>
-<h3>2-3  ----  Internship</h3>
-<h3>3-4  ----  Internship</h3>
-<h3>4-5  ----  Internship</h3>
-<h3>5-6  ----  **Break**</h3>
-<h3>6-7  ----  Self Skill ++</h3>
-<h3>7-8  ----  Self Skill ++</h3>
-<h3>8-9  ----  Self Skill ++</h3>
-<h3>9-10 ----  **Dinner**</h3>
-<h3>10-11----  Applications/Mailing</h3>
-<h3>11-12----  Review</h3>
+{% if routines %}
+    {% for routine in routines %}
+        <h2>Day: {{routine.day}}</h2>
+        <a href="{% url 'getroutine' %}">Edit routine</a>
+        <h3>6-7  ----  {{routine.sixam}}</h3>
+        <h3>7-8  ----  **{{routine.sevenam}}**</h3>
+        <h3>8-9  ----  {{routine.eightam}}</h3>
+        <h3>9-10 ----  {{routine.nineam}}</h3>
+        <h3>10-11----  {{routine.tenam}}</h3>
+        <h3>11-12----  {{routine.elevenam}}</h3>
+        <h3>12-1 ----  {{routine.twelveam}}</h3>
+        <h3>1-2  ----  **{{routine.onepm}}**</h3>
+        <h3>2-3  ----  {{routine.twopm}}</h3>
+        <h3>3-4  ----  {{routine.threepm}}</h3>
+        <h3>4-5  ----  {{routine.fourpm}}</h3>
+        <h3>5-6  ----  **{{routine.fivepm}}**</h3>
+        <h3>6-7  ----  {{routine.sixpm}}</h3>
+        <h3>7-8  ----  {{routine.sevenpm}}</h3>
+        <h3>8-9  ----  {{routine.eightpm}}</h3>
+        <h3>9-10 ----  **{{routine.ninepm}}**</h3>
+        <h3>10-11----  {{routine.tenpm}}</h3>
+        <h3>11-12----  {{routine.elevenpm}}</h3>
+        <h3>12-6 ----  {{routine.twelvepm}}</h3>
+    {% endfor %}
+{% endif %}
+
 {% endblock %}
