@@ -7,6 +7,7 @@ weekday = datetime.today().strftime('%A')
 
 def routine(request):
     # routine = Routine.objects.all().filter(day=datetime.today().strftime('%A'))
+    # routine = Routine.objects.get(day=weekday)
     routines = Routine.objects.all().filter(day=weekday)
     context = {
         'routines':routines,
@@ -22,7 +23,8 @@ def getroutine(request):
     return render(request, 'routines/routineform.html', context)
 
 def postroutine(request):
-    form = RoutineForm(request.POST)
+    routine = Routine.objects.get(day=weekday)
+    form = RoutineForm(request.POST, instance=routine)
     if form.is_valid():
         form.save()
         return redirect('routine')
