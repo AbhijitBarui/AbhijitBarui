@@ -7,10 +7,14 @@ weekday = datetime.today().strftime('%A')
 
 def routine(request):
     # routine = Routine.objects.all().filter(day=datetime.today().strftime('%A'))
-    # routine = Routine.objects.get(day=weekday)
-    routines = Routine.objects.all().filter(day=weekday)
+    try:
+        routine = Routine.objects.get(day=weekday)
+    except:
+        routine = Routine(day=weekday)
+        routine.save()
+    #routine = Routine.objects.all().filter(day=weekday)
     context = {
-        'routines':routines,
+        'routine':routine,
     }
     return render(request, 'routines/routine.html', context)
 
