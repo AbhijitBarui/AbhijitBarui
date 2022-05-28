@@ -1,0 +1,13 @@
+url shortener:
+apps needed:
+    urlmanager
+        model = true,
+            urldata, link(ch), slug(ch)
+        admin = true,
+        urls  = true,
+            create(post), real(redirect)
+        views = true,
+        template = true
+            templates/urlmanager/urlshort.html
+
+urls 'urlshort/'

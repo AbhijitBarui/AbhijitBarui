@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jo-m3%%j=pcliu($!5-4f5z-5)t$dwg&yct^63rxcmlw2bdvn4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.202.139.54','127.0.0.1']
+ALLOWED_HOSTS = ['54.202.139.54','127.0.0.1','localhost']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
     'routines.apps.RoutinesConfig',
+    'urlshortener.apps.UrlshortenerConfig',
 ]
 
 MIDDLEWARE = [
@@ -76,27 +77,27 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'portfoliodb',
-#         'USER': 'abhijit',
-#         'PASSWORD': '76183492',
-#         'HOST': 'localhost',
-#         'PORT': 5432,
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tutorialdb',
-        'USER': 'tutorialuser',
+        'NAME': 'portfoliodb',
+        'USER': 'abhijit',
         'PASSWORD': '76183492',
-        'HOST': 'database-1.chfvu3zacbxp.us-west-2.rds.amazonaws.com',
-        'PORT': '5432',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'tutorialdb',
+#         'USER': 'tutorialuser',
+#         'PASSWORD': '76183492',
+#         'HOST': 'database-1.chfvu3zacbxp.us-west-2.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 

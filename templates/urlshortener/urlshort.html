@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1>URL SHORTENER</h1>
+    <form method="post" action="/urlshort/create">
+        {% csrf_token %}
+        <input type="text" name="link" id="link">
+        <div class="button">
+        <button type="submit" id="shorten">Shorten</button>
+        </div>
+    </form>
+    {% if data %}
+        <h2>Shortened url:  <a href="localhost:8000/urlshort/{{data}}">localhost:8000/urlshort/{{data}}</a></h2>
+    {% endif %}
+{% endblock %}
