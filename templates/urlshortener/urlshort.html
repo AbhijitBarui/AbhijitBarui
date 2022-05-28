@@ -1,7 +1,9 @@
+
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-    <a href=""><h1>URL SHORTENER</h1></a>
+    <a href="{% url 'urlshort' %}"><h1>URL SHORTENER</h1></a>
     <form method="post" action="/urlshort/create">
         {% csrf_token %}
         <input type="text" name="link" id="link">
