@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <a href="54.202.139.54:8000/urlshort/"><h1>URL SHORTENER</h1></a>
+    <a href=""><h1>URL SHORTENER</h1></a>
     <form method="post" action="/urlshort/create">
         {% csrf_token %}
         <input type="text" name="link" id="link">
