@@ -10,9 +10,9 @@
             <ol>
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'projects' %}">Projects</a></li>
-                <li><a href="#">Project_{{project.id}}</a></li>
+                <li><a href="#">{{project.name}}</a></li>
             </ol>
-            <h2>Project_{{project.id}}</h2>
+            <h2>{{project.name}}</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
