@@ -11,3 +11,13 @@ updated                     datetimefield       auto_now true
 created                     datetimefield       auto_now_add true
 
 def str self.name
+
+
+testimonials model schema
+
+star_rating                 integerfield        integerchoices
+name                        charfield           100
+position                    charfield           50
+message                     textfield           
+updated                     datetimefield       auto_now true
+created                     datetimefield       auto_now_add true

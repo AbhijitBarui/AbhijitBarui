@@ -23,4 +23,5 @@ urlpatterns = [
     path('routine/', include('routines.urls')),
     path('urlshort/', include('urlshortener.urls')),
     path('projects/', include('projects.urls')),
+    # path('testimonials/', include('testimonials.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

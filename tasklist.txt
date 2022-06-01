@@ -3,11 +3,6 @@ tasks:
 about.html:
 gibber about me
 
-My works:
-projects app setup
-lists all the websites/games/apps I developed with their host links or github links
-in a nice fashion
-
 testimonials:
 testimonials app setup
 

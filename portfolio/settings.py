@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'routines.apps.RoutinesConfig',
     'urlshortener.apps.UrlshortenerConfig',
     'projects.apps.ProjectsConfig',
+    'testimonials.apps.TestimonialsConfig',
 ]
 
 MIDDLEWARE = [

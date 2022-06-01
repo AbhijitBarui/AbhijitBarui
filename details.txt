@@ -4,3 +4,4 @@ pages
 routines
 urlshortener
 projects
+testimonials
