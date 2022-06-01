@@ -1,0 +1,13 @@
+Projects model schema
+
+name                        charfield           50
+description                 textfield           blank true
+client                      charfield           blank true, default 'self'
+key features(1,2,3...)      charfield
+tech stack(1,2,3...)        charfield
+github link                 charfield
+deployed link               charfield           blank true
+updated                     datetimefield       auto_now true
+created                     datetimefield       auto_now_add true
+
+def str self.name
