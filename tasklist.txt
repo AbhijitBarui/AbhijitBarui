@@ -11,3 +11,28 @@ apps needed:
             templates/urlmanager/urlshort.html
 
 urls 'urlshort/'
+
+headers in nav:
+
+Nice-ass logo
+Home
+About Me
+My Works
+My Blog
+Utilities(drop down)
+Testimonials
+Contacts
+
+topbar: Socials(fa-icons)
+
+
+
+about.html:
+gibber about me, download link for my resume(probably shared from google drive)
+
+My works:
+lists all the websites/games/apps I developed with their host links or github links
+in a nice fashion
+in homepage reduce displayed projects from 6 to 3
+
+my
