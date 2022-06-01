@@ -1,4 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
-Projects
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li>Projects</li>
+            </ol>
+            <h2>Projects</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    {% if projects %}
+        <!-- ======= works Section ======= -->
+        <section id="works" class="services">
+
+            <div class="container" data-aos="fade-up">
+
+                <div class="row gy-4">
+                    {% for project in projects %}
+                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                {% for item in color %}
+                                    {% if forloop.counter0 == project.color_id|add:'-1' %}
+                                        <div class="service-box {{item}}">
+                                    {% endif %}
+                                {% endfor %}
+                                            <i class="ri-discuss-line icon"></i>
+                                            <h3>{{project.name}} {{project.color_id}}</h3>
+                                            <p>{{project.description|truncatechars:50}}</p>
+                                            <a href="{% url 'project' project.id %}" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                            </div>
+                    {% endfor %}
+                    
+
+                </div>
+
+
+            </div>
+
+
+        </section><!-- End Services Section -->
+    {% endif %}
+
+</main><!-- End #main -->
 {% endblock %}

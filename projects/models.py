@@ -1,4 +1,5 @@
 from django.db import models
+import random
 
 class Project(models.Model):
     name = models.CharField(max_length=50)
@@ -20,6 +21,7 @@ class Project(models.Model):
     deployed = models.CharField(max_length=100, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
+    color_id = models.IntegerField(default=random.randint(1,6))
 
     def __str__(self) -> str:
         return self.name

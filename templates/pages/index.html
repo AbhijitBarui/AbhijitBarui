@@ -174,60 +174,46 @@
     
 
     <!-- ======= works Section ======= -->
-    <section id="works" class="services">
+    {% if projects %}
+        <section id="works" class="services">
 
-        <div class="container" data-aos="fade-up">
+            <div class="container" data-aos="fade-up">
 
-            <header class="section-header">
-                <h2>My Works</h2>
-                <p>Most are on Github, some are deployed and running </p>
-            </header>
+                <header class="section-header">
+                    <h2>My Works</h2>
+                    <p>Most are on Github, some are deployed and running </p>
+                </header>
 
-            <div class="row gy-4">
+                <div class="row gy-4">
+                    {% for project in projects %}
+                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                {% for item in color %}
+                                    {% if forloop.counter0 == project.color_id|add:'-1' %}
+                                        <div class="service-box {{item}}">
+                                    {% endif %}
+                                {% endfor %}
+                                            <i class="ri-discuss-line icon"></i>
+                                            <h3>{{project.name}} {{project.color_id}}</h3>
+                                            <p>{{project.description|truncatechars:50}}</p>
+                                            <a href="{% url 'project' project.id %}" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                            </div>
+                    {% endfor %}
 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-box blue">
-                        <i class="ri-discuss-line icon"></i>
-                        <h3>Real Estate Website</h3>
-                        <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure
-                            perferendis tempore et consequatur.</p>
-                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-                    </div>
+                    <a href="{% url 'projects' %}"
+                    class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                    <span>Check out my other works</span>
+                    <i class="bi bi-arrow-right"></i>
+                    </a>
+
                 </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-box orange">
-                        <i class="ri-discuss-line icon"></i>
-                        <h3>NGO Job Portal</h3>
-                        <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic
-                            non ut nesciunt dolorem.</p>
-                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-box green">
-                        <i class="ri-discuss-line icon"></i>
-                        <h3>Blog Website</h3>
-                        <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas
-                            adipisci eos earum corrupti.</p>
-                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <a href="projects.html"
-                class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                <span>Check out other works</span>
-                <i class="bi bi-arrow-right"></i>
-                </a>
+                
 
             </div>
-            
-
-        </div>
 
 
-    </section><!-- End Services Section -->
+        </section><!-- End Services Section -->
+    {% endif %}
 
     
 

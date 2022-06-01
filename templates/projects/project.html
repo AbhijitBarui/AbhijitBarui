@@ -1,4 +1,116 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-Project
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'projects' %}">Projects</a></li>
+                <li><a href="#">Project_{{project.id}}</a></li>
+            </ol>
+            <h2>Project_{{project.id}}</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Project Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-8">
+                    <div class="portfolio-details-slider swiper">
+                        <div class="swiper-wrapper align-items-center">
+
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/portfolio/portfolio-1.jpg' %}" alt="">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/portfolio/portfolio-2.jpg' %}" alt="">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/portfolio/portfolio-3.jpg' %}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="portfolio-info">
+                        <h3>{{project.name}}</h3>
+                        <ul>
+                            <li><strong>Category</strong>: Web design</li>
+                            <li><strong>Client</strong>: {{project.client}}</li>
+                            <li><strong>Project date</strong>: {{project.created}}</li>
+                            {% if project.deployed %}
+                                <li><strong>Project URL</strong>: <a href="#">{{project.deployed}}</a></li>
+                            {% endif %}
+                            {% if project.github %}
+                                <li><strong>Github URL</strong>: <a href="#">{{project.github}}</a></li>
+                            {% endif %}
+                            <li><strong>Tech Stack</strong>: 
+                                {% if project.tech_stack_1 %}
+                                    {{project.tech_stack_1}}
+                                {% endif %}
+                                {% if project.tech_stack_2 %}
+                                    ,{{project.tech_stack_2}}
+                                {% endif %}
+                                {% if project.tech_stack_3 %}
+                                    ,{{project.tech_stack_3}}
+                                {% endif %}
+                                {% if project.tech_stack_4 %}
+                                    ,{{project.tech_stack_4}}
+                                {% endif %}
+                                {% if project.tech_stack_5 %}
+                                    ,{{project.tech_stack_5}}
+                                {% endif %}
+                                {% if project.tech_stack_6 %}
+                                    ,{{project.tech_stack_6}}
+                                {% endif %}
+                            </li>
+                            <li><strong>Key Features</strong>: 
+                                {% if project.key_feature_1 %}
+                                    {{project.key_feature_1}}
+                                {% endif %}
+                                {% if project.key_feature_2 %}
+                                    ,{{project.key_feature_2}}
+                                {% endif %}
+                                {% if project.key_feature_3 %}
+                                    ,{{project.key_feature_3}}
+                                {% endif %}
+                                {% if project.key_feature_4 %}
+                                    ,{{project.key_feature_4}}
+                                {% endif %}
+                                {% if project.key_feature_5 %}
+                                    ,{{project.key_feature_5}}
+                                {% endif %}
+                                {% if project.key_feature_6 %}
+                                    ,{{project.key_feature_6}}
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-description">
+                        <h2>Description</h2>
+                        <p>
+                            {{project.description}}
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->
 {% endblock %}
