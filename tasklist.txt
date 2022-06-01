@@ -1,38 +1,23 @@
-url shortener:
-apps needed:
-    urlmanager
-        model = true,
-            urldata, link(ch), slug(ch)
-        admin = true,
-        urls  = true,
-            create(post), real(redirect)
-        views = true,
-        template = true
-            templates/urlmanager/urlshort.html
+tasks:
 
-urls 'urlshort/'
-
-headers in nav:
-
-Nice-ass logo
-Home
-About Me
-My Works
-My Blog
-Utilities(drop down)
-Testimonials
-Contacts
-
-topbar: Socials(fa-icons)
-
-
+logo design
 
 about.html:
 gibber about me, download link for my resume(probably shared from google drive)
+pages app about view/urls
 
 My works:
 lists all the websites/games/apps I developed with their host links or github links
 in a nice fashion
-in homepage reduce displayed projects from 6 to 3
+projects app setup
 
-my
+testimonials:
+testimonials app setup
+
+blog:
+blog app setup
+
+contact:
+contact app setup, db table for name email subject message storage
+
+newsletter:
