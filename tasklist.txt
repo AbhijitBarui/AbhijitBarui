@@ -1,7 +1,5 @@
 tasks:
 
-logo design
-
 about.html:
 gibber about me, download link for my resume(probably shared from google drive)
 pages app about view/urls
