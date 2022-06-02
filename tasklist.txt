@@ -1,15 +1,14 @@
 tasks:
 
+media files setup
+
 about.html:
 gibber about me
-
-testimonials:
-testimonials app setup
 
 blog:
 blog app setup
 
 contact:
-contact app setup, db table for name email subject message storage
+contact app setup, db table for name email subject message storage and a review system
 
 newsletter:

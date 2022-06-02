@@ -270,7 +270,7 @@
                                        {{testimonial.message}}
                                     </p>
                                     <div class="profile mt-auto">
-                                        <img src="{% static 'img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                                        <img src="{{ testimonial.image_profile.url }}" class="testimonial-img" alt="">
                                         <h3>{{testimonial.name}}</h3>
                                         <h4>{{testimonial.designation}}</h4>
                                         <h4>{{testimonial.created}}</h4>

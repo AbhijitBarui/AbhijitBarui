@@ -12,6 +12,7 @@ Rating_CHOICES = (
 class Testimonial(models.Model):
     rating = models.IntegerField(choices=Rating_CHOICES, default=3)
     name = models.CharField(max_length=100)
+    image_profile = models.ImageField(upload_to='profilephotos/%Y/%m/%d/', blank=True)
     designation = models.CharField(max_length=50)
     message = models.TextField()
     updated = models.DateTimeField(auto_now=True)
