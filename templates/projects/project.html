@@ -26,18 +26,21 @@
                 <div class="col-lg-8">
                     <div class="portfolio-details-slider swiper">
                         <div class="swiper-wrapper align-items-center">
-
-                            <div class="swiper-slide">
-                                <img src="{% static 'img/portfolio/portfolio-1.jpg' %}" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="{% static 'img/portfolio/portfolio-2.jpg' %}" alt="">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="{% static 'img/portfolio/portfolio-3.jpg' %}" alt="">
-                            </div>
+                            {% if project.image_1 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ project.image_1.url }}" alt="">
+                                </div>
+                            {% endif %}
+                            {% if project.image_2 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ project.image_2.url }}" alt="">
+                                </div>
+                            {% endif %}
+                            {% if project.image_3 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ project.image_3.url }}" alt="">
+                                </div>
+                            {% endif %}
 
                         </div>
                         <div class="swiper-pagination"></div>
