@@ -1,12 +1,21 @@
 tasks:
 
-media files setup
 
 about.html:
 gibber about me
 
 blog:
-blog app setup
+blogs page
+    paginate
+    categories
+    category filters
+    tags
+    tag filters
+    search
+blog page
+    content division
+    image insertion in middle
+    comments system
 
 contact:
 contact app setup, db table for name email subject message storage and a review system

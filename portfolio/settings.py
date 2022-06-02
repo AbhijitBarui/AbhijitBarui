@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'urlshortener.apps.UrlshortenerConfig',
     'projects.apps.ProjectsConfig',
     'testimonials.apps.TestimonialsConfig',
+    'blogs.apps.BlogsConfig',
 ]
 
 MIDDLEWARE = [

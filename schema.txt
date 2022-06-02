@@ -21,3 +21,12 @@ position                    charfield           50
 message                     textfield           
 updated                     datetimefield       auto_now true
 created                     datetimefield       auto_now_add true
+
+blog model schema
+
+title                       charfield           100
+subtitle                    charfield           200
+updated                     datetimefield       auto_now true
+created                     datetimefield       auto_now_add true
+content                     textfield           
+is_published                booleanfield        default true
